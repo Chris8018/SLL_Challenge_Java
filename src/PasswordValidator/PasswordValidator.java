@@ -15,7 +15,7 @@ public class PasswordValidator {
     NOT contain space
 
     ==> FAILED!! I check this for 37'
-    ==> Will complete this later
+    ==> Will complete this later ==> LOL!! I forgot NOT
      */
 
     public static boolean validate(String password) {
@@ -30,7 +30,7 @@ public class PasswordValidator {
     }
 
     private static boolean noSpace(String str) {
-        return str.contains(" ");
+        return !str.contains(" ");
     }
 
     private static boolean containsNum(String str) {
