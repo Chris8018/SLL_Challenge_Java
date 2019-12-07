@@ -1,5 +1,6 @@
 import PasswordValidator.PasswordValidator;
 import RemoveSpaceFromString.RemoveSpaceFromString;
+import CollatzConjecture.CollatzConjecture;
 
 import java.util.ArrayList;
 
@@ -8,9 +9,10 @@ public class Main {
 //        System.out.println("Hello world");
 //        challenge1();
 //        challenge2();
+        challenge3();
     }
 
-    public static void challenge1() {
+    private static void challenge1() {
         /*
         Sololearn -> F
         John Doe -> F
@@ -27,9 +29,13 @@ public class Main {
         }
     }
 
-    public static void challenge2() {
+    private static void challenge2() {
         String input = "ab c d e fgh i j kl mn opqr stuvwxyz";
         System.out.println("Input: " + input);
         System.out.println("Output: " + RemoveSpaceFromString.removeSpace(input));
+    }
+
+    private static void challenge3() {
+        CollatzConjecture.stepCount(30);
     }
 }
