@@ -4,6 +4,7 @@ import Paranoia.TransactionInfo;
 import PasswordValidator.PasswordValidator;
 import RemoveSpaceFromString.RemoveSpaceFromString;
 import CollatzConjecture.CollatzConjecture;
+import SummationsCalculator.SummationsCalculator;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,7 +16,20 @@ public class Main {
 //        challenge2();
 //        challenge3();
 //        challenge4();
-        challenge5();
+//        challenge5();
+        challenge6();
+    }
+
+    private static void challenge6() {
+        var testCases = new HashMap<String, Integer>();
+        testCases.put("2 4 *2", 18);
+        testCases.put("1 5 %2", 3);
+
+        for (String input : testCases.keySet()) {
+            var output = SummationsCalculator.calculate(input);
+            var check = testCases.get(input) == output;
+            System.out.println("Input: " + input + " Output: " + output + " -> Is Correct: " + check);
+        }
     }
 
     private static void challenge5() {
