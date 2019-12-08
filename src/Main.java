@@ -1,3 +1,4 @@
+import CubeRoot.CubeRoot;
 import GapfulNumbers.GapfulNumbers;
 import Paranoia.Paranoia;
 import Paranoia.TransactionInfo;
@@ -17,7 +18,21 @@ public class Main {
 //        challenge3();
 //        challenge4();
 //        challenge5();
-        challenge6();
+//        challenge6();
+        challenge7();
+    }
+
+    private static void challenge7() {
+        var testCases = new HashMap<Double, Double>();
+        testCases.put(729d, 9d);
+        testCases.put(41d, 3.4482);
+        testCases.put(2d, 1.2599);
+
+        for (Double input : testCases.keySet()) {
+            var output = CubeRoot.cubeRoot(input);
+            var check = testCases.get(input) == output;
+            System.out.println("Input: " + input + " Output: " + output + " -> Is Correct: " + check);
+        }
     }
 
     private static void challenge6() {
@@ -62,7 +77,7 @@ public class Main {
         testCases.put(583, true);
         testCases.put(210, false);
 
-        testCases.entrySet().stream().forEach( item -> {
+        testCases.entrySet().stream().forEach(item -> {
             var value = item.getKey();
             var result = GapfulNumbers.check(value);
             var checkResult = result == item.getValue();
