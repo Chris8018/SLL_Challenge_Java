@@ -37,14 +37,15 @@ public class CubeRoot {
     private static DecimalFormat df = new DecimalFormat("#.####");
 
     public static double cubeRoot(double num) {
+        // Mainly for num >= 1
         df.setRoundingMode(RoundingMode.DOWN);
         double cu = 0;
-        for (int i=0; cubed(i*i*i) <= num; i++) {
+        for (int i=1; cubed(i) <= num; i++) {
             int temp = (int)cubed(i);
 
             cu = (double) i;
             if (temp == num)
-                break;
+                return cu;
         }
 
         double p=0;
@@ -56,6 +57,10 @@ public class CubeRoot {
     }
 
     private static double cubed(double n) {
+        return n*n*n;
+    }
+
+    private static int cubed(int n) {
         return n*n*n;
     }
 
