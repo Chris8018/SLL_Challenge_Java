@@ -1,15 +1,32 @@
+import GapfulNumbers.GapfulNumbers;
 import PasswordValidator.PasswordValidator;
 import RemoveSpaceFromString.RemoveSpaceFromString;
 import CollatzConjecture.CollatzConjecture;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Main {
     public static void main(String args[]) {
 //        System.out.println("Hello world");
 //        challenge1();
 //        challenge2();
-        challenge3();
+//        challenge3();
+        challenge4();
+    }
+
+    private static void challenge4() {
+        var testCases = new HashMap<Integer, Boolean>();
+        testCases.put(192, true);
+        testCases.put(583, true);
+        testCases.put(210, false);
+
+        testCases.entrySet().stream().forEach( item -> {
+            var value = item.getKey();
+            var result = GapfulNumbers.check(value);
+            var checkResult = result == item.getValue();
+            System.out.println(value + " is a Gapful number: " + result + " -> Is correct: " + checkResult);
+        });
     }
 
     private static void challenge1() {
