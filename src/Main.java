@@ -1,4 +1,6 @@
 import GapfulNumbers.GapfulNumbers;
+import Paranoia.Paranoia;
+import Paranoia.TransactionInfo;
 import PasswordValidator.PasswordValidator;
 import RemoveSpaceFromString.RemoveSpaceFromString;
 import CollatzConjecture.CollatzConjecture;
@@ -12,7 +14,32 @@ public class Main {
 //        challenge1();
 //        challenge2();
 //        challenge3();
-        challenge4();
+//        challenge4();
+        challenge5();
+    }
+
+    private static void challenge5() {
+        var log1 = new ArrayList<TransactionInfo>();
+        log1.add(new TransactionInfo("Feb SLR 4 M"));
+        log1.add(new TransactionInfo("Feb ENT 800 K"));
+        log1.add(new TransactionInfo("Mar SLR 4000 K"));
+        log1.add(new TransactionInfo("Mar ENT 800 K"));
+        log1.add(new TransactionInfo("Apr SLR 4010 K"));
+        log1.add(new TransactionInfo("Apr ENT 810 K"));
+
+        var log2 = new ArrayList<TransactionInfo>();
+        log2.add(new TransactionInfo("Jul SLR 4 M"));
+        log2.add(new TransactionInfo("Jul ENT 800 K"));
+        log2.add(new TransactionInfo("Jul OTR 1200 K"));
+        log2.add(new TransactionInfo("Aug SLR 4000 K"));
+        log2.add(new TransactionInfo("Aug ENT 800 K"));
+        log2.add(new TransactionInfo("Aug OTR 1190 K"));
+        log2.add(new TransactionInfo("Sep SLR 4000 K"));
+        log2.add(new TransactionInfo("Sep ENT 800 K"));
+        log2.add(new TransactionInfo("Sep OTR 1190 K"));
+
+        System.out.println("Log 1 result: " + Paranoia.check(log1) + "\n");
+        System.out.println("Log 2 result: " + Paranoia.check(log2) + "\n");
     }
 
     private static void challenge4() {
