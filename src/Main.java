@@ -3,6 +3,7 @@ import GapfulNumbers.GapfulNumbers;
 import Paranoia.Paranoia;
 import Paranoia.TransactionInfo;
 import PasswordValidator.PasswordValidator;
+import PrimeStrings.PrimeStrings;
 import RemoveSpaceFromString.RemoveSpaceFromString;
 import CollatzConjecture.CollatzConjecture;
 import SummationsCalculator.SummationsCalculator;
@@ -19,7 +20,21 @@ public class Main {
 //        challenge4();
 //        challenge5();
 //        challenge6();
-        challenge7();
+//        challenge7();
+        challenge8();
+    }
+
+    private static void challenge8() {
+        var testCases = new HashMap<String, String>();
+        testCases.put("xyxy", "not prime");
+        testCases.put("aaaa", "not prime");
+        testCases.put("hello", "prime");
+
+        for (String input : testCases.keySet()) {
+            var output = PrimeStrings.check(input);
+            var check = testCases.get(input) == output;
+            System.out.println("Input: " + input + " Output: " + output + " -> Is Correct: " + check);
+        }
     }
 
     private static void challenge7() {
