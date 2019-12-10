@@ -6,6 +6,7 @@ import PasswordValidator.PasswordValidator;
 import PrimeStrings.PrimeStrings;
 import RemoveSpaceFromString.RemoveSpaceFromString;
 import CollatzConjecture.CollatzConjecture;
+import StrangeRoot.StrangeRoot;
 import SummationsCalculator.SummationsCalculator;
 
 import java.util.ArrayList;
@@ -21,7 +22,21 @@ public class Main {
 //        challenge5();
 //        challenge6();
 //        challenge7();
-        challenge8();
+//        challenge8();
+    challenge9();
+    }
+
+    private static void challenge9() {
+        var testCases = new HashMap<Integer, Boolean>();
+        testCases.put(11, true);
+        testCases.put(24, false);
+        testCases.put(2, true);
+
+        for (int input : testCases.keySet()) {
+            var output = StrangeRoot.check(input);
+            var check = testCases.get(input).equals(output);
+            System.out.println("Input: " + input + " Output: " + output + " -> Is Correct: " + check);
+        }
     }
 
     private static void challenge8() {
