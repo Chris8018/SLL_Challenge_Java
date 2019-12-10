@@ -29,10 +29,12 @@ public class Main {
         testCases.put("xyxy", "not prime");
         testCases.put("aaaa", "not prime");
         testCases.put("hello", "prime");
+        testCases.put("ababa", "prime");
+        testCases.put("aabaab", "not prime");
 
         for (String input : testCases.keySet()) {
             var output = PrimeStrings.check(input);
-            var check = testCases.get(input) == output;
+            var check = testCases.get(input).equals(output);
             System.out.println("Input: " + input + " Output: " + output + " -> Is Correct: " + check);
         }
     }

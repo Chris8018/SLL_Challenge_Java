@@ -12,6 +12,8 @@ public class PrimeStrings {
     ==> so... does this mean strings with odd length is prime?
     ==> FAILED -> Over 30'
     ==> Also, how the fuck to do this one :v.
+
+    ***I can basically done by create new repetitive string from sub string than compare :v
      */
 
     public static String check(String str) {
@@ -21,12 +23,13 @@ public class PrimeStrings {
         if (str.length() == 1 || (str.length() > 2 && str.length() % 2 != 0))
             return "prime";
 
-        int d = str.length();
-        while (true) {
-            d /= 2;
-            break;
+        for (int i = 1; i <= str.length()/2; i++) {
+            var subStr = str.substring(0, i);
+            var repetiveStr = subStr.repeat(str.length()/subStr.length());
+            if (str.equals(repetiveStr))
+                return "not prime";
         }
 
-        return "not prime";
+        return "prime";
     }
 }
