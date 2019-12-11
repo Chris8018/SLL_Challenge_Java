@@ -1,3 +1,4 @@
+import CalculateTheDistance.CalculateTheDistance;
 import CubeRoot.CubeRoot;
 import GapfulNumbers.GapfulNumbers;
 import Paranoia.Paranoia;
@@ -9,6 +10,8 @@ import CollatzConjecture.CollatzConjecture;
 import StrangeRoot.StrangeRoot;
 import SummationsCalculator.SummationsCalculator;
 
+import java.awt.*;
+import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -23,7 +26,28 @@ public class Main {
 //        challenge6();
 //        challenge7();
 //        challenge8();
-    challenge9();
+//        challenge9();
+        cha1lenge10();
+    }
+
+    private static void cha1lenge10() {
+        var testCases = new ArrayList<Point>();
+        testCases.add(new Point(2,2));
+        testCases.add(new Point(2,-4));
+        testCases.add(new Point(5,1));
+        testCases.add(new Point(9,4));
+        testCases.add(new Point(3,3));
+        testCases.add(new Point(0,0));
+
+        var testResult = new double[] {6d, 5d, 4.24};
+
+        for (int i = 0; i < testCases.size(); i+=2) {
+            Point a = testCases.get(i);
+            Point b = testCases.get(i+1);
+            double result = Double.valueOf(String.format("%.2f", CalculateTheDistance.calculate(a, b)));
+            boolean isCorrect = result == testResult[i/2];
+            System.out.printf("Distance between %s and %s: %.4f -> Is correct: %b%n", a.toString(), b.toString(), result, isCorrect);
+        }
     }
 
     private static void challenge9() {
